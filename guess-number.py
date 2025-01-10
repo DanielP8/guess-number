@@ -11,8 +11,8 @@ maximum=100
 # Function to generate random integer
 def number_generator(minimum=1, maximum=100):
     """ Generates a random integer """
-    random_int = random.randint(minimum, maximum)
-    return random_int
+    generated_int = random.randint(minimum, maximum)
+    return generated_int
 
 # Function to check if input is an integer
 def is_number(user_input):
@@ -25,8 +25,7 @@ def is_number(user_input):
         return False
 
 # Store random number as a variable
-random_number = number_generator()
-
+generated_number = number_generator()
 
 # Ask user to guess an integer on repeat until they guess it correctly
 while True:
@@ -38,10 +37,10 @@ while True:
         # Give user feedback on difference between their guess and desired number
         if (user_number < minimum) or (user_number > maximum):
             print(f"Not between {minimum} and {maximum}")
-        elif user_number == random_number:
-            print(f'You guessed the {random_number}!')
+        elif user_number == generated_number:
+            print(f'You guessed the {generated_number}!')
             break
-        elif user_number > random_number:
+        elif user_number > generated_number:
             print(f"{user_input} is too high!")
         else:
             print(f'{user_input} is too low!')
